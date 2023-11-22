@@ -1,4 +1,0 @@
-Daniel Birsan y Diego Rodrigo Aguilar
-Pareja 07
-
-Los ficheros de código asm están en las respectivas carpetas sim de cada ejercicio, instrucciones.txt y datos.txt ya contienen los datos necesarios para probar el micro.
