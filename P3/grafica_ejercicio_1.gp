@@ -10,6 +10,7 @@ set key top left
 
 set xrange [1024:17000]
 set xtics 1024, 1024, 16384
+set xtics rotate by 270 offset -1, 0
 
 plot "time_slow_fast.dat" using 1:2 with linespoints title "SLOW", \
      "time_slow_fast.dat" using 1:3 with linespoints title "FAST"
