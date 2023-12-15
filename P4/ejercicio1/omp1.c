@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	int tid,nthr,nproc;
-	int arg;
+	//int arg;
 	nproc = omp_get_num_procs();
 	printf("Hay %d cores disponibles\n", nproc);
 	/*
