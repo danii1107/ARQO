@@ -169,16 +169,15 @@ int main(int nargs, char **argv)
 
         // Sobel edge detection
 #define PIXEL_GREY(x, y) (grey_image[(x) + (y)*width])
-        for (int i = 1; i < width - 1; i++)
-        {
-            for (int j = 1; j < height - 1; j++)
-            {
+        // Bucle optimizado
+        for (int j = 1; j < height - 1; j++) {
+             for (int i = 1; i < width - 1; i++) {
                 int x = i - 1;
                 int y = j - 1;
                 float a = (PIXEL_GREY(i - 1, j - 1) + PIXEL_GREY(i - 1, j) * 2 + PIXEL_GREY(i - 1, j + 1) -
-                           (PIXEL_GREY(i + 1, j - 1) + PIXEL_GREY(i + 1, j) * 2 + PIXEL_GREY(i + 1, j + 1)));
+                        (PIXEL_GREY(i + 1, j - 1) + PIXEL_GREY(i + 1, j) * 2 + PIXEL_GREY(i + 1, j + 1)));
                 float b = (PIXEL_GREY(i - 1, j - 1) + PIXEL_GREY(i, j - 1) * 2 + PIXEL_GREY(i + 1, j - 1) -
-                           (PIXEL_GREY(i - 1, j + 1) + PIXEL_GREY(i - 1, j + 1) * 2 + PIXEL_GREY(i - 1, j + 1)));
+                        (PIXEL_GREY(i - 1, j + 1) + PIXEL_GREY(i - 1, j + 1) * 2 + PIXEL_GREY(i - 1, j + 1)));
 
                 edges[x + y * width_edges] = sqrt(a * a + b * b);
             }
