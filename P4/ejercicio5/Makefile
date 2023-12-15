@@ -5,25 +5,7 @@ FLAGS = -g -Wall -D_GNU_SOURCE -fopenmp
 
 .PHONY: clean all
 
-all: omp1 omp2 pescalar_serie pescalar_par1 pescalar_par2 pescalar_par3 edgeDetector clear
-
-omp1: omp1.c
-	$(CC) $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
-
-omp2: omp2.c
-	$(CC) $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
-
-pescalar_serie: pescalar_serie.c arqo4.c
-	$(CC) $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
-
-pescalar_par1: pescalar_par1.c arqo4.c
-	$(CC) $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
-
-pescalar_par2: pescalar_par2.c arqo4.c
-	$(CC) $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
-
-pescalar_par3: pescalar_par3.c arqo4.c
-	$(CC) $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
+all: edgeDetector clear
 
 edgeDetector: edgeDetector.c stb_image_write.h stb_image.h
 	$(CC) $(FLAGS) -std=gnu99 $(LIB_DIR) -o $@ edgeDetector.c $(LIBS)
@@ -39,7 +21,7 @@ stb_image_write.h:
 	wget --no-check-certificate https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
 
 clean:
-	rm -f *.o *~ omp1 omp2 pescalar_serie pescalar_par1 pescalar_par2 edgeDetector
+	rm -f *.o *~ edgeDetector
 	
 clear:
 	rm -f *.o *~
