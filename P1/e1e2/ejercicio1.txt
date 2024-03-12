@@ -1,0 +1,1 @@
+Todas las intrucciones están soportadas menos los saltos (j, jal). Esto lo sabemos debido a la implementación del microprocesador, en el código fuente se observan las intrucciones que tienen un OPCode asignado y cuales no, además, se puede ver si la funcionalidad de la instrucción esta desarrollada.

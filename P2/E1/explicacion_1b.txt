@@ -1,0 +1,1 @@
+El banco de registros escribe en flanco de bajada, de esta forma lo que conseguimos es que la instrucción siguiente que haga uso del mismo dato y se encuentre en la etapa ID podrá usar ya el dato de la instrucción que esta en la etapa WB sin necesidad de esperar al siguiente ciclo de reloj, porque en el mismo flanco de subida el dato ya estará actualizado en el registro.
